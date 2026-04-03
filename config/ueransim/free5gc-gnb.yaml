@@ -1,0 +1,34 @@
+mcc: '208'          # Mobile Country Code value
+mnc: '93'           # Mobile Network Code value (2 or 3 digits)
+
+nci: '0x000000010'  # NR Cell Identity (36-bit)
+idLength: 32        # NR gNB ID length in bits [22...32]
+tac: 1              # Tracking Area Code
+
+linkIp: 127.0.0.1   # gNB's local IP address for Radio Link Simulation (Usually same with local IP)
+ngapIp: 127.0.0.1   # gNB's local IP address for N2 Interface (Usually same with local IP)
+gtpIp: 127.0.0.9    # gNB's local IP address for N3 Interface (Usually same with local IP)
+gtpLocalPort: 2153  # gNB's own UDP port for GTP (avoid conflict with UPF)
+gtpUpfIp: 127.0.0.8 # UPF GTP-U IP
+gtpUpfPort: 2152    # UPF GTP-U port
+
+# List of AMF address information
+amfConfigs:
+  - address: 127.0.0.18
+    port: 38412
+
+# List of supported S-NSSAIs by this gNB
+slices:
+  - sst: 0x1
+    sd: 0x010203
+
+# Indicates whether or not SCTP stream number errors should be ignored.
+ignoreStreamIds: true
+
+# --- NR Cell configuration for signal testing ---
+nrCells:
+  - cellId: 1           # NR Cell ID
+    nrarfcn: 36000      # NR frequency (example: n78 band ~ 3500 MHz)
+    dlBandwidth: 50     # Downlink bandwidth in MHz
+    ulBandwidth: 50     # Uplink bandwidth in MHz
+    txPower: -50          # Transmit power in dBm (reduce for poor RSRP)
