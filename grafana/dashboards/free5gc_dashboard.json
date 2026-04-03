@@ -1,0 +1,80 @@
+{
+  "id": 1,
+  "type": "stat",
+  "title": "New panel",
+  "gridPos": {
+    "x": 0,
+    "y": 0,
+    "h": 8,
+    "w": 12
+  },
+  "fieldConfig": {
+    "defaults": {
+      "mappings": [],
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          {
+            "color": "green",
+            "value": null
+          },
+          {
+            "color": "red",
+            "value": 80
+          }
+        ]
+      },
+      "color": {
+        "mode": "thresholds"
+      }
+    },
+    "overrides": []
+  },
+  "pluginVersion": "12.4.2",
+  "targets": [
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cfhiexs12fy0wb"
+      },
+      "editorMode": "code",
+      "expr": "free5gc_ue_ambr_downlink_mbps",
+      "legendFormat": "__auto",
+      "range": true,
+      "refId": "A"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cfhiexs12fy0wb"
+      },
+      "editorMode": "code",
+      "expr": "free5gc_ue_connected_total",
+      "instant": false,
+      "legendFormat": "__auto",
+      "range": true,
+      "refId": "B"
+    }
+  ],
+  "datasource": {
+    "type": "prometheus",
+    "uid": "cfhiexs12fy0wb"
+  },
+  "options": {
+    "reduceOptions": {
+      "values": false,
+      "calcs": [
+        "lastNotNull"
+      ],
+      "fields": ""
+    },
+    "orientation": "auto",
+    "textMode": "auto",
+    "wideLayout": true,
+    "colorMode": "value",
+    "graphMode": "area",
+    "justifyMode": "auto",
+    "showPercentChange": false,
+    "percentChangeColorMode": "standard"
+  }
+}
